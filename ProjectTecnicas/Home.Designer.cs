@@ -30,6 +30,7 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnOperacion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -52,11 +53,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnOperacion
+            // 
+            this.btnOperacion.Location = new System.Drawing.Point(138, 266);
+            this.btnOperacion.Name = "btnOperacion";
+            this.btnOperacion.Size = new System.Drawing.Size(205, 115);
+            this.btnOperacion.TabIndex = 2;
+            this.btnOperacion.Text = "Registrar Operacion";
+            this.btnOperacion.UseVisualStyleBackColor = true;
+            this.btnOperacion.Click += new System.EventHandler(this.btnOperacion_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 462);
+            this.Controls.Add(this.btnOperacion);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Home";
@@ -69,5 +81,6 @@
 
         private Button button1;
         private Button button2;
+        private Button btnOperacion;
     }
 }

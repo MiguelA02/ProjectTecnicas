@@ -30,5 +30,12 @@ namespace ProjectTecnicas
             doctores.Show();
             this.Visible = false;
         }
+
+        private void btnOperacion_Click(object sender, EventArgs e)
+        {
+            formOperacion operacion = new formOperacion();
+            operacion.Show();
+            this.Visible = false;
+        }
     }
 }
