@@ -51,6 +51,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(162, 23);
             this.txtNombre.TabIndex = 0;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // n
             // 
@@ -76,6 +77,8 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(162, 23);
             this.txtApellido.TabIndex = 2;
+            this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // label3
             // 
@@ -92,6 +95,8 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(162, 23);
             this.txtTelefono.TabIndex = 4;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label4
             // 
@@ -108,6 +113,8 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(162, 23);
             this.txtCorreo.TabIndex = 6;
+            this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
             // 
             // label5
             // 
@@ -124,6 +131,8 @@
             this.txtEspecialidad.Name = "txtEspecialidad";
             this.txtEspecialidad.Size = new System.Drawing.Size(162, 23);
             this.txtEspecialidad.TabIndex = 8;
+            this.txtEspecialidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEspecialidad_KeyDown);
+            this.txtEspecialidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEspecialidad_KeyPress);
             // 
             // label6
             // 
@@ -140,9 +149,12 @@
             this.txtGradoAcademico.Name = "txtGradoAcademico";
             this.txtGradoAcademico.Size = new System.Drawing.Size(162, 23);
             this.txtGradoAcademico.TabIndex = 10;
+            this.txtGradoAcademico.TextChanged += new System.EventHandler(this.txtGradoAcademico_TextChanged);
+            this.txtGradoAcademico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGradoAcademico_KeyPress);
             // 
             // selectEstadoCivil
             // 
+            this.selectEstadoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectEstadoCivil.FormattingEnabled = true;
             this.selectEstadoCivil.Items.AddRange(new object[] {
             "Casado",
@@ -152,7 +164,9 @@
             this.selectEstadoCivil.Name = "selectEstadoCivil";
             this.selectEstadoCivil.Size = new System.Drawing.Size(162, 23);
             this.selectEstadoCivil.TabIndex = 12;
+            this.selectEstadoCivil.DropDown += new System.EventHandler(this.selectEstadoCivil_DropDown);
             this.selectEstadoCivil.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.selectEstadoCivil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.selectEstadoCivil_KeyPress);
             // 
             // label1
             // 

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProjectTecnicas
 {
@@ -34,7 +35,7 @@ namespace ProjectTecnicas
             }
             return 1;
         }
-        public static int agregarOperacion(Operacion operacion)
+        public static int agregarOperacion(Operacion operacion )
         {
             using (SqlConnection conexion = BDconexion.obtenerConexion())
             {
@@ -44,21 +45,54 @@ namespace ProjectTecnicas
             }
             return 1;
         }
+        public static int agregarHospital(Hospital hospital)
+        {
+            using(SqlConnection conexion = BDconexion.obtenerConexion())
+            {
+                string query = "INSERT Into Hospital(valorFiscal,areaTerreno,direccionExacta,provincia,canton,distrito,cantidadNiveles,color,cantidadConsultorios,tiposdCirugia,anoConstruccion,imagen )values('" + hospital.valorFiscal + "','" + hospital.areaTerreno + "','" + hospital.direccionExacta + "','" + hospital.provincia + "','" + hospital.canton + "','" + hospital.distrito + "','" + hospital.cantidadNiveles + "','" + hospital.color + "','" + hospital.cantidadConsultorios + "','" + hospital.tiposdCirugia + "','" + hospital.anoConstruccion + "','" + hospital.imagen + "')";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                comando.ExecuteNonQuery();
+            }
+            return 1;
+        }
 
-        public static SqlDataReader traerInformacionDB(string tipo, string consulta)
+        public static SqlDataReader traerInformacionDB(string columnas, string tabla, string filtrar, string dato)
+        {
+            if (filtrar == null && dato == null)
+            {
+                SqlConnection conexion = BDconexion.obtenerConexion();
+                string query = "select " + columnas + " from " + tabla + ";";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataReader renderPacientes = comando.ExecuteReader();
+                return renderPacientes;
+            }
+            else
+            {
+                SqlConnection conexion = BDconexion.obtenerConexion();
+                string query = "select " + columnas + " from " + tabla + "  where " + filtrar + " = '" + dato + "';";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataReader renderPacientes = comando.ExecuteReader();
+                return renderPacientes;
+            }
+            
+        }
+
+        public static SqlDataReader traerInformacionDBDobleFiltro(string columnas, string tabla, string filtrar1, string dato1, string filtrar2, string dato2)
         {
             SqlConnection conexion = BDconexion.obtenerConexion();
-            string query = "select "+consulta+" from Personas  where tipo = '"+ tipo +"';";
+            string query = "select " + columnas + " from " + tabla + "  where " + filtrar1 + " = '" + dato1 + "' AND " +filtrar2+ "= '" + dato2 + "';";
             SqlCommand comando = new SqlCommand(query, conexion);
-            SqlDataReader renderPacientes = comando.ExecuteReader();
-            return renderPacientes;
+            SqlDataReader renderDoctores = comando.ExecuteReader();
+            return renderDoctores;
         }
+
         public static int generadorDeNumerosRandoms()
         {
             Random random = new Random();
             int numero = random.Next(1000, 9999);
             return numero;
         }
+        
     }
 
 

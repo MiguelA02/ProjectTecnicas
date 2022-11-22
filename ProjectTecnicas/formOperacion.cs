@@ -26,13 +26,18 @@ namespace ProjectTecnicas
         private void formOperacion_Load(object sender, EventArgs e)
         {
 
-            SqlDataReader pacienteRender = PacienteAgregar.traerInformacionDB("Paciente", "nombre, id, apellido");
+            SqlDataReader pacienteRender = PacienteAgregar.traerInformacionDB("nombre, id, apellido", "Personas", "tipo", "Paciente");
                 while (pacienteRender.Read())
                 {
                     selectPaciente.Items.Add(pacienteRender["id"].ToString()+ "-" + pacienteRender["nombre"].ToString() + " " + pacienteRender["apellido"].ToString());
                 }
+            SqlDataReader hospitalRender = PacienteAgregar.traerInformacionDB("id", "Hospital", null, null);
+            while (hospitalRender.Read())
+            {
+                selectHospital.Items.Add(hospitalRender["id"]);
+            }
 
-            SqlDataReader doctoresRender = PacienteAgregar.traerInformacionDB("Doctor", "nombre, id, apellido");
+            SqlDataReader doctoresRender = PacienteAgregar.traerInformacionDBDobleFiltro("nombre, id, apellido", "Personas", "tipo", "Doctor", "especialidad", "Cirujano");
                 while (doctoresRender.Read())
                 {
                     selectDoctor.Items.Add(doctoresRender["id"].ToString() + "-" + doctoresRender["nombre"].ToString() +" "+ doctoresRender["apellido"].ToString());
@@ -85,6 +90,17 @@ namespace ProjectTecnicas
         private void Descripcion_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtValorContrato_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Este campo solo admite números", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+           
         }
     }
 }

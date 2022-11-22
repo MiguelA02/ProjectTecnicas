@@ -49,6 +49,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(180, 23);
             this.txtNombre.TabIndex = 0;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label1
             // 
@@ -74,6 +75,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(180, 23);
             this.txtApellido.TabIndex = 2;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // label3
             // 
@@ -90,6 +92,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(180, 23);
             this.txtTelefono.TabIndex = 4;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label4
             // 
@@ -106,15 +109,17 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(180, 23);
             this.txtCorreo.TabIndex = 6;
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
             // 
             // selectEstado
             // 
+            this.selectEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectEstado.FormattingEnabled = true;
             this.selectEstado.Items.AddRange(new object[] {
             "Casado",
             "Soltero",
             "Viudo"});
-            this.selectEstado.Location = new System.Drawing.Point(83, 300);
+            this.selectEstado.Location = new System.Drawing.Point(83, 305);
             this.selectEstado.Name = "selectEstado";
             this.selectEstado.Size = new System.Drawing.Size(180, 23);
             this.selectEstado.TabIndex = 8;
@@ -152,7 +157,7 @@
             // 
             // btnCrearPersona
             // 
-            this.btnCrearPersona.Location = new System.Drawing.Point(253, 389);
+            this.btnCrearPersona.Location = new System.Drawing.Point(315, 405);
             this.btnCrearPersona.Name = "btnCrearPersona";
             this.btnCrearPersona.Size = new System.Drawing.Size(123, 37);
             this.btnCrearPersona.TabIndex = 12;
@@ -160,12 +165,12 @@
             this.btnCrearPersona.UseVisualStyleBackColor = true;
             this.btnCrearPersona.Click += new System.EventHandler(this.btnCrearPersona_Click);
             // 
-            // Form1
+            // formPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(625, 481);
             this.Controls.Add(this.btnCrearPersona);
             this.Controls.Add(this.checkContrato);
             this.Controls.Add(this.checkPatologia);
@@ -179,7 +184,7 @@
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNombre);
-            this.Name = "Form1";
+            this.Name = "formPaciente";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

@@ -8,21 +8,21 @@ namespace ProjectTecnicas
 {
     public class Hospital
     {
-        public string valorFiscal { get; set; }
+        public double valorFiscal { get; set; }
         public string areaTerreno { get; set; }
         public string direccionExacta { get; set; }
         public string provincia { get; set; }
         public string canton { get; set; }
         public string distrito { get; set; }
-        public string cantidadNiveles { get; set; }
+        public int cantidadNiveles { get; set; }
         public string color { get; set; }
-        public string cantidadConsultorios { get; set; }
+        public int cantidadConsultorios { get; set; }
         public string tiposdCirugia { get; set; }
         public string anoConstruccion { get; set; }
         public string imagen { get; set; }
         public Hospital() { }
 
-        public Hospital(string valorFiscal, string areaTerreno, string direcExacta, string provincia, string canton, string distrito, string cantNiveles, string color, string cantConsultorios, string tiposdCirugia, string anoConstruccion, string imagen)
+        public Hospital(double valorFiscal, string areaTerreno, string direcExacta, string provincia, string canton, string distrito, int cantNiveles, string color, int cantConsultorios, string tiposdCirugia, string anoConstruccion, string imagen)
         {
             this.valorFiscal = valorFiscal;
             this.areaTerreno = areaTerreno;

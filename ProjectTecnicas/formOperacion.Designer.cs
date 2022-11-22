@@ -44,6 +44,8 @@
             // 
             // selectHospital
             // 
+            this.selectHospital.AllowDrop = true;
+            this.selectHospital.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectHospital.FormattingEnabled = true;
             this.selectHospital.Location = new System.Drawing.Point(36, 76);
             this.selectHospital.Name = "selectHospital";
@@ -71,6 +73,7 @@
             // 
             // selectPaciente
             // 
+            this.selectPaciente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectPaciente.FormattingEnabled = true;
             this.selectPaciente.Location = new System.Drawing.Point(36, 119);
             this.selectPaciente.Name = "selectPaciente";
@@ -89,6 +92,7 @@
             // 
             // selectDoctor
             // 
+            this.selectDoctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectDoctor.FormattingEnabled = true;
             this.selectDoctor.Location = new System.Drawing.Point(36, 165);
             this.selectDoctor.Name = "selectDoctor";
@@ -139,6 +143,7 @@
             this.txtValorContrato.Size = new System.Drawing.Size(151, 23);
             this.txtValorContrato.TabIndex = 10;
             this.txtValorContrato.TextChanged += new System.EventHandler(this.valorContrato_TextChanged);
+            this.txtValorContrato.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorContrato_KeyPress);
             // 
             // label6
             // 
@@ -154,7 +159,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(759, 462);
+            this.ClientSize = new System.Drawing.Size(572, 462);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtValorContrato);
             this.Controls.Add(this.button1);

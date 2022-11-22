@@ -37,5 +37,12 @@ namespace ProjectTecnicas
             operacion.Show();
             this.Visible = false;
         }
+
+        private void crearHopital_Click(object sender, EventArgs e)
+        {
+            formHospital hospital = new formHospital();
+            hospital.Show();
+            this.Visible = false;
+        }
     }
 }
